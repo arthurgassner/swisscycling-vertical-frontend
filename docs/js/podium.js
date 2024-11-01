@@ -54,7 +54,6 @@ document.addEventListener("DOMContentLoaded", function() {
             } else if (params.data.Rank === 3) {
                 return { backgroundColor: "#e6c4a2", ...darkText }; // Bronze
             }
-            return darkText;
         }
     };
 

@@ -53,6 +53,16 @@ document.addEventListener("DOMContentLoaded", function() {
         ],
         pagination: true,
         paginationPageSize: 20,
+        getRowStyle: (params) => {
+            const darkText = { color: "#333" }; // Dark text color
+            if (params.data.Rank === 1) {
+                return { backgroundColor: "#fde27c", ...darkText }; // Gold
+            } else if (params.data.Rank === 2) {
+                return { backgroundColor: "#e1e1e1", ...darkText }; // Silver
+            } else if (params.data.Rank === 3) {
+                return { backgroundColor: "#e6c4a2", ...darkText }; // Bronze
+            }
+        }
     };
 
     gridApi = agGrid.createGrid(document.querySelector("#js-leaderboard"), gridOptions);
