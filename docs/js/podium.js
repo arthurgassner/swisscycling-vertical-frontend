@@ -46,14 +46,15 @@ document.addEventListener("DOMContentLoaded", function() {
         ],
         pagination: false,
         getRowStyle: (params) => {
-            if (params.node.rowIndex === 0) {
-                return { backgroundColor: "#fde27c" }; // Gold
-            } else if (params.node.rowIndex === 1) {
-                return { backgroundColor: "#e1e1e1" }; // Silver
-            } else if (params.node.rowIndex === 2) {
-                return { backgroundColor: "#e6c4a2" }; // Bronze
+            const darkText = { color: "#333" }; // Dark text color
+            if (params.data.Rank === 1) {
+                return { backgroundColor: "#fde27c", ...darkText }; // Gold
+            } else if (params.data.Rank === 2) {
+                return { backgroundColor: "#e1e1e1", ...darkText }; // Silver
+            } else if (params.data.Rank === 3) {
+                return { backgroundColor: "#e6c4a2", ...darkText }; // Bronze
             }
-            return null;
+            return darkText;
         }
     };
 
