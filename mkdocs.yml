@@ -10,7 +10,8 @@ theme:
     accent: white     # Accent color
 plugins: [] # disable search
 nav:
-  - Challenge: index.md    
+  - Home: index.md  
+  - Challenge Overview: challenge_overview.md  
   - Leaderboard: leaderboard.md    
   - About: about.md    
 markdown_extensions:
