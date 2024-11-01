@@ -55,5 +55,5 @@ document.addEventListener("DOMContentLoaded", function() {
         paginationPageSize: 20,
     };
 
-    gridApi = agGrid.createGrid(document.querySelector("#myGrid"), gridOptions);
+    gridApi = agGrid.createGrid(document.querySelector("#js-leaderboard"), gridOptions);
 });
