@@ -5,7 +5,7 @@ theme:
   icon:
     logo: material/bike
   palette:
-    scheme: default  # Options: default, slate, or custom
+    scheme: slate  # Options: default, slate, or custom
     primary: red  # Primary color
     accent: white     # Accent color
 plugins: [] # disable search
