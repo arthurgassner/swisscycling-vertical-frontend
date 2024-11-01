@@ -1,0 +1,20 @@
+site_name: Swiss-northsouth Challenge
+site_url: https://mydomain.org/
+theme:
+  name: material
+  icon:
+    logo: material/bike
+  palette:
+    scheme: default  # Options: default, slate, or custom
+    primary: red  # Primary color
+    accent: white     # Accent color
+plugins: [] # disable search
+nav:
+  - Challenge: index.md    
+  - Leaderboard: leaderboard.md    
+  - About: about.md    
+markdown_extensions:
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
