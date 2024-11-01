@@ -1,4 +1,4 @@
-# Swiss-northsouth Challenge
+# Swiss Cycling North-to-South Challenge
 
 ## Overview
 
