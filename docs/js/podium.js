@@ -1,5 +1,3 @@
-// grid.js
-
 document.addEventListener("DOMContentLoaded", function() {
     class NameRenderer {
         eGui;
@@ -34,13 +32,11 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    let gridApi;
-
     const gridOptions = {
         rowData: [
             { Rank: 1, Name: "Arthur", Date: 64950, Time: "16h" },
-            { Rank: 2, Name: "F-Series", Date: 33850, Time: "14h" },
-            { Rank: 3, Name: "Corolla", Date: 29600, Time: "14h" },
+            { Rank: 2, Name: "Could be you", Date: 33850, Time: "14h" },
+            { Rank: 3, Name: "Could also be you", Date: 29600, Time: "14h" },
         ],
         columnDefs: [
             { field: "Rank", flex: 0.5 },
@@ -49,7 +45,17 @@ document.addEventListener("DOMContentLoaded", function() {
             { field: "Time", flex: 1 },
         ],
         pagination: false,
+        getRowStyle: (params) => {
+            if (params.node.rowIndex === 0) {
+                return { backgroundColor: "#fde27c" }; // Gold
+            } else if (params.node.rowIndex === 1) {
+                return { backgroundColor: "#e1e1e1" }; // Silver
+            } else if (params.node.rowIndex === 2) {
+                return { backgroundColor: "#e6c4a2" }; // Bronze
+            }
+            return null;
+        }
     };
 
-    gridApi = agGrid.createGrid(document.querySelector("#js-podium"), gridOptions);
+    agGrid.createGrid(document.querySelector("#js-podium"), gridOptions);
 });
