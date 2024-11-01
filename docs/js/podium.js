@@ -48,8 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
             { field: "Date", flex: 1 },
             { field: "Time", flex: 1 },
         ],
-        pagination: true,
-        paginationPageSize: 20,
+        pagination: false,
     };
 
     gridApi = agGrid.createGrid(document.querySelector("#js-podium"), gridOptions);
