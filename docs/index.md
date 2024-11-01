@@ -2,7 +2,9 @@
 
 ## Overview
 
-TODO add image
+<figure markdown="span">
+  ![Image title](assets/overview.png){ width="100%" }
+</figure>
 
 ## Podium
 
