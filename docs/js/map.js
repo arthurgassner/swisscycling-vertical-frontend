@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Initialize the map
     const map = L.map('map', {
-        minZoom: 7.75,
+        minZoom: 7.65,
         maxZoom: 15,
-        zoomSnap: 0.25,
+        zoomSnap: 0.1,
         zoomControl: false
-    }).setView(center=[46.8182, 8.2275], zoom=7.75);
+    }).setView(center=[46.85, 8.2275], zoom=7.65);
 
     // Add OpenStreetMap tiles
     L.tileLayer('https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png', {
@@ -44,4 +44,8 @@ document.addEventListener("DOMContentLoaded", function() {
             }).addTo(map);
         })
         .catch(error => console.error('Error loading Switzerland GeoJSON:', error));
+
+    // Add norhtern-most and southern-most markers
+    L.marker([47.808264, 8.567897]).addTo(map); // N
+    L.marker([45.818031, 9.016483]).addTo(map); // S
 });
