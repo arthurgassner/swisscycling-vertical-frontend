@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }).setView(center=[46.85, 8.2275], zoom=7.65);
 
     // Add OpenStreetMap tiles
-    L.tileLayer('https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png', {
+    L.tileLayer('https://tile.osm.ch/switzerland/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
             this.eachLayer(function(layer) {
                 layer.setStyle({
                     color: '#cd1c18',       // Color of the line
-                    weight: 3,           // Thickness of the line
+                    weight: 2,           // Thickness of the line
                     opacity: 1.0,        // Opacity of the line
                 });
             });
