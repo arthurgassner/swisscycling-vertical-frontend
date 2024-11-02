@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
         maxZoom: 15,
         zoomSnap: 0.25,
         zoomControl: false
-    }).setView(center=[46.8182, 8.2275], zoom=7.5);
+    }).setView(center=[46.8182, 8.2275], zoom=7.75);
 
     // Add OpenStreetMap tiles
     L.tileLayer('https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png', {
