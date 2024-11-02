@@ -10,8 +10,10 @@
 }
 </style>
 
+<script src="/js/map.js"></script>
 <div id="map"></div>
 
 ## Podium
 
+<script src="/js/podium.js"></script>
 <div id="js-podium" style="width: 100%; height: 177px;" class="ag-theme-quartz-dark"></div>

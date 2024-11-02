@@ -23,8 +23,5 @@ markdown_extensions:
 extra_css:
   - https://unpkg.com/leaflet/dist/leaflet.css
 extra_javascript:
-  - /js/leaderboard.js
-  - /js/podium.js
-  - /js/map.js
   - https://unpkg.com/leaflet/dist/leaflet.js
   - https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js
