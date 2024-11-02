@@ -20,5 +20,11 @@ markdown_extensions:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - md_in_html
+extra_css:
+  - https://unpkg.com/leaflet/dist/leaflet.css
 extra_javascript:
-  - js/leaderboard.js
+  - /js/leaderboard.js
+  - /js/podium.js
+  - /js/map.js
+  - https://unpkg.com/leaflet/dist/leaflet.js
+  - https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js

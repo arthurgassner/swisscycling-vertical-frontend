@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Initialize the map
     const map = L.map('map', {
-        minZoom: 7.5,
+        minZoom: 7.75,
         maxZoom: 15,
         zoomSnap: 0.25,
         zoomControl: false
