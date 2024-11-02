@@ -42,24 +42,27 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     const rowData = [
-        { Rank: 1, Name: "Arthur", Date: "2023-10-10T08:30:00", Duration: "16h", Link: 'some link'},
-        { Rank: 2, Name: "Could be you", Date: "2023-10-09T09:00:00", Duration: "14h", Link: 'some link'},
-        { Rank: 3, Name: "Could also be you", Date: "2023-10-08T07:45:00", Duration: "14h", Link: 'some link'},
+        { "#": 1, Name: "Arthur", Date: "2023-10-10T08:30:00", Duration: 37600}, // 16 hours in seconds
+        { "#": 2, Name: "Could be you", Date: "2023-10-09T09:00:00", Duration: 50400}, // 14 hours in seconds
+        { "#": 3, Name: "Could also be you", Date: "2023-10-08T07:45:00", Duration: 50400},
     ];
 
     const columnDefs = [
-        { field: "Rank", flex: 0.5 },
-        { field: "Name", flex: 2, cellRenderer: NameRenderer },
+        { field: "#", flex: 0.25 },
+        { field: "Name", flex: 1, cellRenderer: NameRenderer },
         {
             field: "Date",
-            flex: 0.8,
+            flex: 0.4,
             cellRenderer: (params) => {
                 const date = new Date(params.value);
                 return date.toLocaleDateString('fr-FR');
             }
         },
-        { field: "Duration", flex: 0.7 },
-        { field: "Strava Link", flex: 0.8 },
+        {
+            field: "Duration",
+            flex: 0.7,
+            cellRenderer: (params) => formatDuration(params.value)
+        },
     ];
 
     const gridOptions = {
@@ -69,15 +72,24 @@ document.addEventListener("DOMContentLoaded", function() {
         getRowStyle: styleRowsByRank
     };
 
+    function formatDuration(seconds) {
+        const hours = Math.floor(seconds / 3600).toString().padStart(2, '0');
+        const minutes = Math.floor((seconds % 3600) / 60).toString().padStart(2, '0');
+        const secs = (seconds % 60).toString().padStart(2, '0');
+    
+        return `${hours}:${minutes}:${secs}`;
+    }
+    
+
     function styleRowsByRank(params) {
-        const darkText = { color: "#333" }; // Dark text color
-        switch (params.data.Rank) {
+        const darkText = { color: "#333" };
+        switch (params.data["#"]) {
             case 1:
-                return { backgroundColor: "#fde27c", ...darkText }; // Gold
+                return { backgroundColor: "#fde27c", ...darkText };
             case 2:
-                return { backgroundColor: "#e1e1e1", ...darkText }; // Silver
+                return { backgroundColor: "#e1e1e1", ...darkText };
             case 3:
-                return { backgroundColor: "#e6c4a2", ...darkText }; // Bronze
+                return { backgroundColor: "#e6c4a2", ...darkText };
             default:
                 return null;
         }
