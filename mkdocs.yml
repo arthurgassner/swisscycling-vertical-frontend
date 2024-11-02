@@ -25,3 +25,4 @@ extra_css:
 extra_javascript:
   - https://unpkg.com/leaflet/dist/leaflet.js
   - https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js
+  - https://unpkg.com/leaflet-omnivore@0.3.4/leaflet-omnivore.min.js

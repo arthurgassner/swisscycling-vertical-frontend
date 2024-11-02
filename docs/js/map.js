@@ -45,7 +45,20 @@ document.addEventListener("DOMContentLoaded", function() {
         })
         .catch(error => console.error('Error loading Switzerland GeoJSON:', error));
 
-    // Add norhtern-most and southern-most markers
+    // Add northern-most and southern-most markers
     L.marker([47.808264, 8.567897]).addTo(map); // N
     L.marker([45.818031, 9.016483]).addTo(map); // S
+
+    // Load the KML file and add the route to the map
+    omnivore.kml('/assets/suggested_route.kml')
+        .on('ready', function(e) {
+            this.eachLayer(function(layer) {
+                layer.setStyle({
+                    color: '#cd1c18',       // Color of the line
+                    weight: 3,           // Thickness of the line
+                    opacity: 1.0,        // Opacity of the line
+                });
+            });
+        })
+        .addTo(map);
 });
