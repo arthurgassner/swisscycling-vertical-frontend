@@ -2,8 +2,9 @@
 
 You believe that you've completed the challenge?
 
-Congratulations! Then please send me a proof of your ride to me via email.
-After carefully reviewing your ride, it will be added to the leaderboard.
+Congratulations! If you'd like to appear on the leaderboard, you can send me a recording[^1] of your ride via [email](mailto:arth.gassner@gmail.com). After carefully reviewing your ride, it will be added to the leaderboard.
+
+[^1]: For example a Strava link. 
 
 !!! success "Prize"
-    If you've beaten my current best-time, I promise to ship you a toblerone.
+    If you've beaten my current best-time, I promise to send you a toblerone.
