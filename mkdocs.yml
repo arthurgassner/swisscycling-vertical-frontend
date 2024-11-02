@@ -12,7 +12,9 @@ plugins: [] # disable search
 nav:
   - Home: index.md  
   - Challenge Overview: challenge_overview.md  
+  - Challenge Rules: rules.md
   - Leaderboard: leaderboard.md    
+  - Submit A Ride: submit_a_ride.md
   - About: about.md    
 markdown_extensions:
   - attr_list
@@ -21,6 +23,9 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - md_in_html
   - smarty
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
 extra_css:
   - https://unpkg.com/leaflet/dist/leaflet.css
 extra_javascript:
