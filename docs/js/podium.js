@@ -1,7 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Avatar URL for all NameRenderer instances
-    const AVATAR_URL = 'https://avatars.githubusercontent.com/u/38256417?v=4&size=64';
-
     // Utility function to format seconds as hh:mm:ss
     function formatDuration(seconds) {
         const hours = Math.floor(seconds / 3600).toString().padStart(2, '0');
@@ -19,14 +16,15 @@ document.addEventListener("DOMContentLoaded", function() {
             this.eGui.style.alignItems = 'center';
             this.eGui.style.height = '100%';
 
-            const avatar = this.createAvatar();
+            const avatarUrl = params.data.avatar_url || 'TODO_DEFAULT_AVATAR_URL'; // TODO FIND ONE
+            const avatar = this.createAvatar(avatarUrl);
             const nameElement = this.createNameElement(params.value);
             this.eGui.append(avatar, nameElement);
         }
 
-        createAvatar() {
+        createAvatar(avatarUrl) {
             const avatar = document.createElement('img');
-            avatar.src = AVATAR_URL;
+            avatar.src = avatarUrl;
             avatar.className = 'logo';
             avatar.style.height = '80%';
             avatar.style.width = 'auto';
@@ -49,13 +47,6 @@ document.addEventListener("DOMContentLoaded", function() {
             return false;
         }
     }
-
-    // Row data with fields for grid
-    const rowData = [
-        { "#": 1, Name: "Arthur", Date: "2023-10-10T08:30:00", Duration: 57600 }, // 16 hours in seconds
-        { "#": 2, Name: "Could be you", Date: "2023-10-09T09:00:00", Duration: 50400 }, // 14 hours in seconds
-        { "#": 3, Name: "Could also be you", Date: "2023-10-08T07:45:00", Duration: 50400 },
-    ];
 
     // Column definitions with custom renderers
     const columnDefs = [
@@ -85,14 +76,34 @@ document.addEventListener("DOMContentLoaded", function() {
         return rankStyles[rank] || null;
     }
 
-    // Grid options with row data, column definitions, and row styling
-    const gridOptions = {
-        rowData,
-        columnDefs,
-        pagination: false,
-        getRowStyle: styleRowsByRank
-    };
+    // Fetch the podium data and initialize the grid
+    async function fetchPodiumData() {
+        try {
+            const response = await fetch(`http://localhost:9010/podium`); // TODO change
+            const data = await response.json();
+            // Transform data to match grid requirements
+            const rowData = data.podium.map(item => ({
+                "#": item.rank,
+                Name: item.name,
+                Date: item.datetime,
+                Duration: item.duration_s,
+                avatar_url: item.avatar_url
+            }));
+            
+            // Grid options with row data, column definitions, and row styling
+            const gridOptions = {
+                rowData,
+                columnDefs,
+                pagination: false,
+                getRowStyle: styleRowsByRank
+            };
 
-    // Initialize the grid with the specified options
-    agGrid.createGrid(document.querySelector("#js-podium"), gridOptions);
+            // Initialize the grid with the specified options
+            agGrid.createGrid(document.querySelector("#js-podium"), gridOptions);
+        } catch (error) {
+            console.error("Error fetching podium data:", error);
+        }
+    }
+
+    fetchPodiumData();
 });
