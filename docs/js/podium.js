@@ -42,16 +42,24 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     const rowData = [
-        { Rank: 1, Name: "Arthur", Date: 64950, Time: "16h" },
-        { Rank: 2, Name: "Could be you", Date: 33850, Time: "14h" },
-        { Rank: 3, Name: "Could also be you", Date: 29600, Time: "14h" },
+        { Rank: 1, Name: "Arthur", Date: "2023-10-10T08:30:00", Duration: "16h", Link: 'some link'},
+        { Rank: 2, Name: "Could be you", Date: "2023-10-09T09:00:00", Duration: "14h", Link: 'some link'},
+        { Rank: 3, Name: "Could also be you", Date: "2023-10-08T07:45:00", Duration: "14h", Link: 'some link'},
     ];
 
     const columnDefs = [
         { field: "Rank", flex: 0.5 },
         { field: "Name", flex: 2, cellRenderer: NameRenderer },
-        { field: "Date", flex: 1 },
-        { field: "Time", flex: 1 },
+        {
+            field: "Date",
+            flex: 0.8,
+            cellRenderer: (params) => {
+                const date = new Date(params.value);
+                return date.toLocaleDateString('fr-FR');
+            }
+        },
+        { field: "Duration", flex: 0.7 },
+        { field: "Strava Link", flex: 0.8 },
     ];
 
     const gridOptions = {
