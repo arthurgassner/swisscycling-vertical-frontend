@@ -5,12 +5,10 @@ document.addEventListener("DOMContentLoaded", function() {
         maxZoom: 15,
         zoomSnap: 0.1,
         zoomControl: false
-    }).setView(center=[46.85, 8.2275], zoom=7.65);
+    }).setView(center=[46.9, 8.2275], zoom=7.65);
 
     // Add OpenStreetMap tiles
-    L.tileLayer('https://tile.osm.ch/switzerland/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
+    L.tileLayer('https://tile.osm.ch/switzerland/{z}/{x}/{y}.png').addTo(map);
 
     // Load Switzerland borders from local GeoJSON file
     fetch('/assets/switzerland.geojson')
