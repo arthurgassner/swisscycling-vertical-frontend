@@ -62,16 +62,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Column definitions with custom renderers
     const columnDefs = [
-        { field: "#", flex: 0.25 },
+        { field: "#", flex: 0.1 },
         { field: "Name", flex: 1, cellRenderer: NameRenderer },
         {
             field: "Date",
-            flex: 0.4,
+            flex: 0.3,
             cellRenderer: (params) => new Date(params.value).toLocaleDateString('fr-FR')
         },
         {
             field: "Duration",
-            flex: 0.7,
+            flex: 0.25,
             cellRenderer: (params) => formatDuration(params.value)
         },
     ];
