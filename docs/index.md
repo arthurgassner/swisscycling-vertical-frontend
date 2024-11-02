@@ -3,7 +3,7 @@
 <style type="text/css">
 #map {
     width: 100%;
-    height: 480px;
+    height: 460px;
     margin: 0;
     z-index: 1;
 }
