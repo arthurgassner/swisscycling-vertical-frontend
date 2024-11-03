@@ -9,4 +9,4 @@ _The Vertical_ is a swiss cycling challenge consisting of cycling from Switzerla
 
 
 > [!NOTE]  
-> The code for the backend can be found [here](https://github.com/arthurgassner/swisscycling-vertical-backend)
+> The code for the backend can be found [here](https://github.com/arthurgassner/swisscycling-vertical-backend).
