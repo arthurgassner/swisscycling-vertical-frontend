@@ -1,4 +1,4 @@
-# Swiss Cycling Vertical Challenge
+# :flag_ch: Swiss Cycling Vertical Challenge
 
 <style type="text/css">
 #map {

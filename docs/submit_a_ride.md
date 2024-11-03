@@ -7,4 +7,4 @@ Congratulations! If you'd like to appear on the leaderboard, you can send me a r
 [^1]: For example a Strava link. 
 
 !!! success "Prize"
-    If you've beaten my current best-time, I promise to send you a toblerone.
+    If you've beaten my current best-time, I promise to send you a toblerone. :chocolate_bar:
