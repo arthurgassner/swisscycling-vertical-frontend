@@ -100,7 +100,14 @@ document.addEventListener("DOMContentLoaded", function() {
             };
 
             // Initialize the grid with the specified options
-            agGrid.createGrid(document.querySelector("#js-leaderboard"), gridOptions);
+            const gridDiv = document.querySelector("#js-leaderboard");
+            const gridApi = agGrid.createGrid(gridDiv, gridOptions);
+
+            // Set up search functionality
+            document.querySelector("#search-input").addEventListener("input", function(event) {
+                const query = event.target.value.toLowerCase();
+                gridApi.setGridOption("quickFilterText", query);
+            });
         } catch (error) {
             console.error("Error fetching records data:", error);
         }
