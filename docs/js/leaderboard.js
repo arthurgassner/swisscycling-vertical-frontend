@@ -94,7 +94,8 @@ document.addEventListener("DOMContentLoaded", function() {
             const gridOptions = {
                 rowData,
                 columnDefs,
-                pagination: false,
+                pagination: true,
+                paginationAutoPageSize: true,
                 getRowStyle: styleRowsByRank
             };
 
