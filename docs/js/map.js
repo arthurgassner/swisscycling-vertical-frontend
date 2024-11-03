@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Initialize the map
     const map = L.map('map', {
-        minZoom: 7.65,
+        minZoom: 7.55,
         maxZoom: 15,
-        zoomSnap: 0.1,
+        zoomSnap: 0.05,
         zoomControl: false
-    }).setView(center=[46.9, 8.2275], zoom=7.65);
+    }).setView(center=[46.9, 8.2275], zoom=7.55);
 
     // Add OpenStreetMap tiles
     L.tileLayer('https://tile.osm.ch/switzerland/{z}/{x}/{y}.png').addTo(map);
