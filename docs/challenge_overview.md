@@ -12,7 +12,7 @@
 <script src="/js/map.js"></script>
 <div id="map"></div>
 
-The **Swiss Cycling Vertical Challenge** -- The Vertical for short -- is a bicycle route crossing Switzerland North to South.
+The **Swiss Cycling Vertical Challenge** -- *The Vertical* for short -- is a bicycle route crossing Switzerland North to South.
 
 It starts in Switzerland's northernmost point -- in Oberbargen, Schaffhausen -- and ends in Switzerland's southernmost point -- in Pedrinate, Ticino.
 
