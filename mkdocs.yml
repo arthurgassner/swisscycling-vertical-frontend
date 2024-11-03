@@ -22,6 +22,10 @@ extra:
       link: https://arthurgassner.ch
     - icon: material/email
       link: mailto:arth.gassner@gmail.com
+    - icon: fontawesome/brands/github 
+      link: https://github.com/arthurgassner/swisscycling-vertical-frontend
+    - icon: fontawesome/brands/github 
+      link: https://github.com/arthurgassner/swisscycling-vertical-backend
 markdown_extensions:
   - attr_list
   - pymdownx.emoji:
