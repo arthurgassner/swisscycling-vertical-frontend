@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Fetch the podium data and initialize the grid
     async function fetchPodiumData() {
         try {
-            const response = await fetch(`http://localhost:9010/podium`); // TODO change
+            const response = await fetch(`https://swisscycling-vertical-backend.arthurgassner.ch/podium`); // TODO change
             const data = await response.json();
             // Transform data to match grid requirements
             const rowData = data.podium.map(item => ({

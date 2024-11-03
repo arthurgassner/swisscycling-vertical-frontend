@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Fetch the leaderboard data and initialize the grid
     async function fetchLeaderboardData() {
         try {
-            const response = await fetch(`http://localhost:9010/records`); // TODO change
+            const response = await fetch(`https://swisscycling-vertical-backend.arthurgassner.ch/records`); 
             const data = await response.json();
             // Transform data to match grid requirements
             const rowData = data.records.map(item => ({
