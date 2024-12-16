@@ -2,6 +2,7 @@ site_name: Swiss Cycling Vertical Challenge
 site_url: https://swisscycling-vertical.arthurgassner.ch/
 theme:
   name: material
+  custom_dir: overrides # Needed for the google search metatag
   icon:
     logo: material/bike
   favicon: assets/flag_ch.png
